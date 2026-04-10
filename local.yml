@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: eOS01
+      become: yes
+      pacman:
+        name: "{{ lookup('file', 'pkglist.txt').splitlines() }}"
+        state: present
+        update_cache: yes
