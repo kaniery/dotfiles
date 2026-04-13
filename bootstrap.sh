@@ -5,6 +5,14 @@ if [ "$EUID" -ne 0 ]; then
   echo "Please run as root or with sudo"
 fi
 
+if command -v sudo >/dev/null 2>&1; then
+    SUDO="sudo"
+else
+    SUDO=""
+fi
+
+$SUDO pacman -Sy --noconfirm ansible
+
 echo "Installing Ansible..."
 sudo pacman -Sy --noconfirm git ansible
 
