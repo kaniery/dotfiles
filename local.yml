@@ -16,9 +16,9 @@
           - docker-compose
         state: present
   
-      - name: Docker service enable
-        become: yes
-        systemd:
-          name: docker
-          enabled: yes
-          state: started
+    - name: Docker service enable
+      become: yes
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
