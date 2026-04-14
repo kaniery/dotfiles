@@ -25,7 +25,6 @@ dnsmasq
 dolphin
 dolphin-plugins
 dosfstools
-downgrade
 dracut
 duf
 e2fsprogs
