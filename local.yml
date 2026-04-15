@@ -4,9 +4,10 @@
     - name: eOS01
       become: yes
       pacman:
-        name: "{{ lookup('file', 'pkglist.txt').split() }}"
+        name: "{{ lookup('file', 'pkglist.txt').splitlines() | select | list }}"
         state: present
         update_cache: yes
+      ignore_errors: yes
         
     - name: Docker install
       become: yes
